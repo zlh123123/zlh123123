@@ -1,0 +1,221 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>CS144笔记 | 好急好急的Hexo博客</title><meta name="author" content="Linghao Zhang"><meta name="copyright" content="Linghao Zhang"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="概述课程官网：CS 144: Introduction to Computer Networking 我的实现代码：zlh123123&#x2F;CS144 (github.com) Checkpoint 0	networking warmuplab文档：check0.pdf (cs144.github.io) 1 配置实验环境在Ubuntu 22.04系统中，运行指令 12sudo apt up">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CS144笔记">
+<meta property="og:url" content="http://zlh123123.github.io/2024/07/16/CS144%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="好急好急的Hexo博客">
+<meta property="og:description" content="概述课程官网：CS 144: Introduction to Computer Networking 我的实现代码：zlh123123&#x2F;CS144 (github.com) Checkpoint 0	networking warmuplab文档：check0.pdf (cs144.github.io) 1 配置实验环境在Ubuntu 22.04系统中，运行指令 12sudo apt up">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://zlh123123.github.io/img/butterfly-icon.png">
+<meta property="article:published_time" content="2024-07-16T11:43:27.000Z">
+<meta property="article:modified_time" content="2024-07-20T07:51:33.590Z">
+<meta property="article:author" content="Linghao Zhang">
+<meta property="article:tag" content="项目">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://zlh123123.github.io/img/butterfly-icon.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://zlh123123.github.io/2024/07/16/CS144%E7%AC%94%E8%AE%B0/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'CS144笔记',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  isShuoshuo: false
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">好急好急的Hexo博客</span></a><a class="nav-page-title" href="/"><span class="site-name">CS144笔记</span></a></span><div id="menus"></div></nav><div id="post-info"><h1 class="post-title">CS144笔记</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-07-16T11:43:27.000Z" title="发表于 2024-07-16 19:43:27">2024-07-16</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-07-20T07:51:33.590Z" title="更新于 2024-07-20 15:51:33">2024-07-20</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/CS%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/">CS基础项目</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>课程官网：<a target="_blank" rel="noopener" href="https://cs144.github.io/">CS 144: Introduction to Computer Networking</a></p>
+<p>我的实现代码：<a target="_blank" rel="noopener" href="https://github.com/zlh123123/CS144">zlh123123&#x2F;CS144 (github.com)</a></p>
+<h1 id="Checkpoint-0networking-warmup"><a href="#Checkpoint-0networking-warmup" class="headerlink" title="Checkpoint 0	networking warmup"></a>Checkpoint 0	networking warmup</h1><p>lab文档：<a target="_blank" rel="noopener" href="https://cs144.github.io/assignments/check0.pdf">check0.pdf (cs144.github.io)</a></p>
+<h2 id="1-配置实验环境"><a href="#1-配置实验环境" class="headerlink" title="1 配置实验环境"></a>1 配置实验环境</h2><p>在<code>Ubuntu 22.04</code>系统中，运行指令</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update &amp;&amp; sudo apt install git cmake gdb build-essential clang \</span><br><span class="line">clang-tidy clang-format gcc-doc pkg-config glibc-doc tcpdump tshark</span><br></pre></td></tr></table></figure>
+
+<p>当然还有多种配置环境方式，可参考<a target="_blank" rel="noopener" href="https://cs144.github.io/assignments/check0.pdf">check0.pdf (cs144.github.io)</a></p>
+<h2 id="2-1-客户端手动访问网站"><a href="#2-1-客户端手动访问网站" class="headerlink" title="2.1 客户端手动访问网站"></a>2.1 客户端手动访问网站</h2><p>在<code>Ubuntu</code>命令行中输入</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">telnet cs144.keithw.org http</span><br></pre></td></tr></table></figure>
+
+<p>得到输出如下</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Trying 104.196.238.229...</span><br><span class="line">Connected to cs144.keithw.org.</span><br><span class="line">Escape character is <span class="string">&#x27;^]&#x27;</span>.</span><br></pre></td></tr></table></figure>
+
+<p>表明已经连接上 <a target="_blank" rel="noopener" href="http://cs144.keithw.org/hello">http://cs144.keithw.org/hello</a> 。随后输入三行设置规则后<strong>按下回车</strong></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">GET /hello HTTP/1.1		</span><br><span class="line">Host: cs144.keithw.org</span><br><span class="line">Connection: close</span><br></pre></td></tr></table></figure>
+
+<p><strong>这里注意</strong>：<code>telnet</code>连接是有时间限制的，太长时间不输入连接会自动关闭哦；在输入设置规则时，每条规则前不能有空格等字符，否则无法识别。</p>
+<p>这三行代码的意思是：</p>
+<ul>
+<li>该请求为<code>GET</code>请求，使用<code>HTTP/1.1</code>协议，目标路径是<code>/hello</code></li>
+<li>目标主机是<code>cs144.keithw.org</code></li>
+<li><code>Connection: close</code>表示在完成请求后立即关闭与服务器的连接。</li>
+</ul>
+<p>成功运行后的结果如下</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">HTTP/1.1 200 OK</span><br><span class="line">Date: Tue, 16 Jul 2024 10:30:55 GMT</span><br><span class="line">Server: Apache</span><br><span class="line">Last-Modified: Thu, 13 Dec 2018 15:45:29 GMT</span><br><span class="line">ETag: <span class="string">&quot;e-57ce93446cb64&quot;</span></span><br><span class="line">Accept-Ranges: bytes</span><br><span class="line">Content-Length: 14</span><br><span class="line">Connection: close</span><br><span class="line">Content-Type: text/plain</span><br><span class="line"></span><br><span class="line">Hello, CS144!</span><br><span class="line">Connection closed by foreign host.</span><br></pre></td></tr></table></figure>
+
+<p>这里的<code>Hello, CS144!</code>与直接打开网址 <a target="_blank" rel="noopener" href="http://cs144.keithw.org/hello">http://cs144.keithw.org/hello</a> 的结果是一样的，这样就🆗啦。</p>
+<p>这里还有一个<strong>Assignment</strong>，要求访问 <a target="_blank" rel="noopener" href="http://cs144.keithw.org/lab0/sunetid">http://cs144.keithw.org/lab0/sunetid</a> ，这个<code>sunetid</code>似乎是学号？做法和上述一致：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">GET /lab0/1145 HTTP/1.1</span><br><span class="line">Host: cs144.keithw.org</span><br><span class="line">Connection: close</span><br></pre></td></tr></table></figure>
+
+<p>输出为</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">HTTP/1.1 200 OK</span><br><span class="line">Date: Tue, 16 Jul 2024 11:17:09 GMT</span><br><span class="line">Server: Apache</span><br><span class="line">X-You-Said-Your-SunetID-Was: 1145</span><br><span class="line">X-Your-Code-Is: 250824</span><br><span class="line">Content-length: 108</span><br><span class="line">Vary: Accept-Encoding</span><br><span class="line">Connection: close</span><br><span class="line">Content-Type: text/plain</span><br><span class="line"></span><br><span class="line">Hello! You told us that your SUNet ID was <span class="string">&quot;1145&quot;</span>. Please see the HTTP headers (above) <span class="keyword">for</span> your secret code.</span><br><span class="line">Connection closed by foreign host.</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-2-给自己发邮件"><a href="#2-2-给自己发邮件" class="headerlink" title="2.2 给自己发邮件"></a>2.2 给自己发邮件</h2><p>这个实验貌似需要斯坦福的邮箱地址才能得到效果❓这里就没有写</p>
+<h2 id="2-3-服务器端在干什么"><a href="#2-3-服务器端在干什么" class="headerlink" title="2.3 服务器端在干什么"></a>2.3 服务器端在干什么</h2><p>首先输入指令</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netcat -v -l -p 9090</span><br></pre></td></tr></table></figure>
+
+<p>建立一个监听端口为9090的服务器，其中</p>
+<ul>
+<li><code>-v</code>: 启用详细模式，会显示更多调试信息。</li>
+<li><code>-l</code>: 监听模式，告诉netcat在指定的端口上监听连接。</li>
+<li><code>-p 9090</code>: 指定监听的端口号为9090。</li>
+</ul>
+<p>另外开一个终端，输入</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">telnet localhost 9090</span><br></pre></td></tr></table></figure>
+
+<p>使用telnet工具连接到本地主机上的端口9090。具体含义如下：</p>
+<ul>
+<li><code>telnet</code>: 是一个用于远程登录的协议和工具，通过telnet可以连接远程主机的端口。</li>
+<li><code>localhost</code>: 表示本地主机，即指向本机IP地址127.0.0.1。</li>
+<li><code>9090</code>: 指定要连接的端口号为9090。</li>
+</ul>
+<p>这个指令的作用是使用telnet工具连接到本地主机上的9090端口，来与在该端口上运行的服务进行通信或交互。</p>
+<p>此时，向netcat窗口中输入任何信息，都会在telnet窗口中显示出来；反之亦然。</p>
+<h2 id="3-为TCP写一个可靠字节流传输程序"><a href="#3-为TCP写一个可靠字节流传输程序" class="headerlink" title="3 为TCP写一个可靠字节流传输程序"></a>3 为TCP写一个可靠字节流传输程序</h2><p>对于Internet而言，它只能“尽最大努力”来传输数据。然鹅这些数据可能会被丢失、被纂改、顺序错误或者发了多次，因此我们需要写一个程序来保证这个传输的“可靠的”。我们写的程序<code>webget</code>用来创建<code> TCP stream socket</code>，完成上面的连接服务器和访问网页的操作。</p>
+<p>首先下载资源文件</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/cs144/minnow</span><br><span class="line"><span class="built_in">cd</span> minnow</span><br><span class="line">cmake -S . -B build</span><br><span class="line">cmake --build build</span><br></pre></td></tr></table></figure>
+
+<p><strong>注</strong>：这里在执行<code>cmake</code>指令时，可能遇到</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">CMake Error at CMakeLists.txt:1 (cmake_minimum_required):</span><br><span class="line">  CMake 3.24.2 or higher is required.  You are running version 3.22.1</span><br></pre></td></tr></table></figure>
+
+<p>在更新<code>cmake</code>时，可以使用下列操作</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/Kitware/CMake/releases/download/v3.25.0/cmake-3.25.0.tar.gz</span><br><span class="line">tar -zxvf cmake-3.25.0.tar.gz</span><br><span class="line"><span class="built_in">sudo</span> apt-get install libssl-dev</span><br><span class="line"><span class="built_in">cd</span> cmake-3.25.0</span><br><span class="line">./bootstrap</span><br><span class="line">make</span><br><span class="line"><span class="built_in">sudo</span> make install</span><br></pre></td></tr></table></figure>
+
+<p>这个程序有下列要求</p>
+<ul>
+<li>我们要写的代码在<code>/apps/webgets.cc</code>中的<code>get_URL</code>函数</li>
+<li>要使用<code>TCPSocket</code> and <code> Address</code>这两个类</li>
+<li>代码没几行</li>
+<li>行间以<code>\r\n</code>进行分割</li>
+</ul>
+<p><strong>以下为编写流程</strong></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://zlh123123.github.io">Linghao Zhang</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://zlh123123.github.io/2024/07/16/CS144%E7%AC%94%E8%AE%B0/">http://zlh123123.github.io/2024/07/16/CS144%E7%AC%94%E8%AE%B0/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://zlh123123.github.io" target="_blank">好急好急的Hexo博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E9%A1%B9%E7%9B%AE/">项目</a></div><div class="post-share"><div class="social-share" data-image="/img/butterfly-icon.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2024/07/21/%E6%97%A5%E8%AF%AD%E5%8A%A9%E8%AF%8D%E5%8A%A8%E8%AF%8D%E4%B8%8E%E5%BD%A2%E5%AE%B9%E8%AF%8D%E5%8F%98%E5%BD%A2/" title="日语助词动词与形容词变形"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">日语助词动词与形容词变形</div></div><div class="info-2"><div class="info-item-1">动词变形原形与动词分类一类动词非る结尾的动词或る前的假名为あ段、う段和お段。  行く（いく） 始まる（はじまる）  特殊一类动词：以る结尾，且る前面的假名为い段或え段，但其是一类动词。 口诀：要知入归走切减滑  要る（いる） 知る（しる） 入る（はいる） 帰る（かえる） 走る（はしる） 切る（きる） 減る（へる） 滑る（すえる）  二类动词以る结尾，且る前面的假名为い段或え段。  起きる（おきる） 寝る（ねる）  三类动词即来る（くる）和する。 其中，动名词 +...</div></div></div></a><a class="pagination-related" href="/2024/06/21/CS61A%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" title="CS61A学习记录"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">CS61A学习记录</div></div><div class="info-2"><div class="info-item-1">Homeworkhw01CS61&#x2F;CS61A&#x2F;hw&#x2F;hw01 at main · zlh123123&#x2F;CS61 (github.com) hw01还是一些基础的python语法练习，下面介绍了一个语法现象。 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556def if_function(condition, true_result, false_result):    &quot;&quot;&quot;Return true_result if condition is a true value, and    false_result otherwise.    &gt;&gt;&gt; if_function(True, 2, 3)    2    &gt;&gt;&gt; if_function(False, 2, 3)    3    &gt;&gt;&gt;...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2024/06/21/CS61A%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" title="CS61A学习记录"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-06-21</div><div class="info-item-2">CS61A学习记录</div></div><div class="info-2"><div class="info-item-1">Homeworkhw01CS61&#x2F;CS61A&#x2F;hw&#x2F;hw01 at main · zlh123123&#x2F;CS61 (github.com) hw01还是一些基础的python语法练习，下面介绍了一个语法现象。 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556def if_function(condition, true_result, false_result):    &quot;&quot;&quot;Return true_result if condition is a true value, and    false_result otherwise.    &gt;&gt;&gt; if_function(True, 2, 3)    2    &gt;&gt;&gt; if_function(False, 2, 3)    3    &gt;&gt;&gt;...</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Linghao Zhang</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">16</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Checkpoint-0networking-warmup"><span class="toc-number">2.</span> <span class="toc-text">Checkpoint 0	networking warmup</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E9%85%8D%E7%BD%AE%E5%AE%9E%E9%AA%8C%E7%8E%AF%E5%A2%83"><span class="toc-number">2.1.</span> <span class="toc-text">1 配置实验环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%89%8B%E5%8A%A8%E8%AE%BF%E9%97%AE%E7%BD%91%E7%AB%99"><span class="toc-number">2.2.</span> <span class="toc-text">2.1 客户端手动访问网站</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-%E7%BB%99%E8%87%AA%E5%B7%B1%E5%8F%91%E9%82%AE%E4%BB%B6"><span class="toc-number">2.3.</span> <span class="toc-text">2.2 给自己发邮件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E5%9C%A8%E5%B9%B2%E4%BB%80%E4%B9%88"><span class="toc-number">2.4.</span> <span class="toc-text">2.3 服务器端在干什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E4%B8%BATCP%E5%86%99%E4%B8%80%E4%B8%AA%E5%8F%AF%E9%9D%A0%E5%AD%97%E8%8A%82%E6%B5%81%E4%BC%A0%E8%BE%93%E7%A8%8B%E5%BA%8F"><span class="toc-number">2.5.</span> <span class="toc-text">3 为TCP写一个可靠字节流传输程序</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><div class="content"><a class="title" href="/2024/11/15/hello-world/" title="Hello World">Hello World</a><time datetime="2024-11-15T07:25:49.098Z" title="发表于 2024-11-15 15:25:49">2024-11-15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/11/04/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86NLP/" title="自然语言处理NLP">自然语言处理NLP</a><time datetime="2024-11-04T06:27:02.000Z" title="发表于 2024-11-04 14:27:02">2024-11-04</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/13/%E5%AF%86%E7%A0%81%E5%8F%A3%E4%BB%A4%E5%A4%8D%E7%94%A8%E5%88%86%E6%9E%90/" title="密码口令复用分析">密码口令复用分析</a><time datetime="2024-10-13T08:19:25.000Z" title="发表于 2024-10-13 16:19:25">2024-10-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/12/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86/" title="数据库原理">数据库原理</a><time datetime="2024-10-12T10:16:40.000Z" title="发表于 2024-10-12 18:16:40">2024-10-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/10/12/%E5%AF%86%E7%A0%81%E5%AD%A6/" title="密码学">密码学</a><time datetime="2024-10-12T10:13:46.000Z" title="发表于 2024-10-12 18:13:46">2024-10-12</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2024 By Linghao Zhang</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
