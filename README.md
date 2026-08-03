@@ -2,7 +2,7 @@
 
 # 👋 Hi, I'm Linghao Zhang
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&center=true&vCenter=true&width=500&lines=SJTU+Undergrad+%E2%86%92+Incoming+Graduate;Speech+AI+%7C+Password+Security+%7C+AI+Agent;Always+learning%2C+always+building+%F0%9F%9A%80)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com/?font=Fira+Code\&pause=1200\&center=true\&vCenter=true\&width=600\&lines=Stay+curious%2C+keep+moving+forward.;Turning+ideas+into+something+real.;Small+steps%2C+meaningful+progress.)](https://github.com/DenverCoder1/readme-typing-svg)
 
 </div>
 
@@ -10,23 +10,23 @@
 
 ## 🧑‍💻 About Me
 
-- 🎓 Senior @ **Shanghai Jiao Tong University (SJTU)**, incoming graduate student at SJTU
-- 🏢 Intern @ **ZTE**, working on speech model research (TTS, end-to-end speech models)
-- 🔬 Research on **password security** @ SJTU
-- 🤖 Currently exploring **AI Agent**
-- 📫 Reach me at **lh.zhang.work@gmail.com**
+* 🎓 Senior at **Shanghai Jiao Tong University (SJTU)**, incoming graduate student at SJTU
+* 🏢 Intern at **ZTE**, working on speech model research, including TTS and end-to-end speech models
+* 🔬 Conducting research on **password security** at SJTU
+* 🤖 Currently exploring **AI Agents**
+* 📫 Reach me at [**lh.zhang.work@gmail.com**](mailto:lh.zhang.work@gmail.com)
 
 ---
 
 ## 📊 GitHub Stats
 
 <div align="center">
-  <img height="170" src="https://github-readme-stats.vercel.app/api?username=zlh123123&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" />
-  <img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=zlh123123&layout=compact&theme=tokyonight&hide_border=true&langs_count=8" />
+  <img height="170" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=zlh123123&theme=tokyonight" alt="GitHub Stats" />
+  <img height="170" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=zlh123123&theme=tokyonight" alt="Top Languages" />
 </div>
 
 <div align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=zlh123123&theme=tokyonight&hide_border=true" />
+  <img src="https://streak-stats.demolab.com/?user=zlh123123&theme=tokyonight&hide_border=true" alt="GitHub Streak" />
 </div>
 
 ---
@@ -35,9 +35,18 @@
 
 <div align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/zlh123123/zlh123123/output/github-snake-dark.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/zlh123123/zlh123123/output/github-snake.svg" />
-    <img alt="github-snake" src="https://raw.githubusercontent.com/zlh123123/zlh123123/output/github-snake.svg" />
+    <source
+      media="(prefers-color-scheme: dark)"
+      srcset="https://raw.githubusercontent.com/zlh123123/zlh123123/output/github-snake-dark.svg"
+    />
+    <source
+      media="(prefers-color-scheme: light)"
+      srcset="https://raw.githubusercontent.com/zlh123123/zlh123123/output/github-snake.svg"
+    />
+    <img
+      alt="GitHub contribution snake"
+      src="https://raw.githubusercontent.com/zlh123123/zlh123123/output/github-snake.svg"
+    />
   </picture>
 </div>
 
@@ -46,14 +55,16 @@
 ## 🏆 GitHub Trophies
 
 <div align="center">
-  <img src="https://github-profile-trophy-rust.vercel.app/?username=zlh123123&theme=tokyonight&no-frame=true&row=1&column=7" />
+  <img
+    src="https://github-profile-trophy.vercel.app/?username=zlh123123&theme=tokyonight&no-frame=true&no-bg=true&margin-w=4&row=1&column=7"
+    alt="GitHub Trophies"
+  />
 </div>
-
 
 ---
 
 <div align="center">
 
-![Profile Views](https://komarev.com/ghpvc/?username=zlh123123&color=blueviolet&style=flat-square)
+![Profile Views](https://komarev.com/ghpvc/?username=zlh123123\&color=blueviolet\&style=flat-square)
 
 </div>
